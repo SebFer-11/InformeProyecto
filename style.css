@@ -1,0 +1,207 @@
+/* ====== RESET GENERAL ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== ENCABEZADO CON ANIMACIÓN ====== */
+.main-header {
+    background: linear-gradient(270deg, #1d548b, #4a8aca, #6db3f2, #1d548b);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    border-bottom: 5px solid #0b2b4a;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.main-header h1 {
+    font-size: 2.3em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.main-header h2 {
+    font-size: 1.3em;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.main-header .info {
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.main-header ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.main-header li {
+    margin: 4px 0;
+}
+
+/* ====== NAVEGACIÓN ====== */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #133c63;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    z-index: 10;
+    border-bottom: 3px solid #0b2b4a;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 8px 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: #4a8aca;
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+.container-main {
+    padding: 40px 10%;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container-main h1 {
+    color: #1d548b;
+    border-bottom: 2px solid #1d548b;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.container-main h2 {
+    color: #14436e;
+    margin-top: 30px;
+}
+
+.container-main h3 {
+    color: #174f88;
+    margin-top: 20px;
+}
+
+ul {
+    margin-left: 20px;
+    list-style-type: square;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #1d548b;
+    color: white;
+}
+
+/* ====== ARTÍCULOS ====== */
+article {
+    background: #ffffff;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 4px solid #1d548b;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ====== IMÁGENES DE DIAGRAMAS ====== */
+.diagramas img {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border: 2px solid #14436e;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.diagramas img:hover {
+    transform: scale(1.05);
+}
+
+/* ====== BOTÓN FLOTANTE ====== */
+#btnTop {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #1d548b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4em;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 99;
+}
+
+#btnTop:hover {
+    background-color: #4a8aca;
+    transform: scale(1.1);
+}
+
+/* ====== PIE DE PÁGINA ====== */
+footer {
+    background: #133c63;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 4px solid #0b2b4a;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .container-main {
+        padding: 20px 5%;
+    }
+
+    .main-header h1 {
+        font-size: 1.8em;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+}

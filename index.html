@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas - Hostal ApuQhawarina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1>DESARROLLO DE SOFTWARE</h1>
+            <h2>Sistema de Información para Reservas y Gestión del Hostal ApuQhawarina</h2>
+
+            <section class="info">
+                <p><strong>Integrantes:</strong></p>
+                <ul>
+                    <li>Fernandez Pari Jose Sebastian</li>
+                    <li>Apaza Quispe Emerson</li>
+                    <li>Gibaja Serrano Mauricio</li>
+                    <li>Alvarez Quispe Alexander</li>
+                    <li>Leva Sosa Cesar</li>
+                </ul>
+                <p><strong>Fecha:</strong> 5 de noviembre de 2025</p>
+            </section>
+        </div>
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <a href="#descripcion">Descripción</a>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#actores">Actores</a>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#diagramas">Diagramas</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container-main">
+
+        <!-- SECCIÓN DESCRIPCIÓN -->
+        <section id="descripcion">
+            <h1>I. Descripción del Sistema y Alcance</h1>
+            <p>
+                El Sistema de Información para la Gestión de Reservas del Hostal Apu Qhawarina tiene como objetivo
+                automatizar, centralizar y optimizar el proceso de reservas, registro y control de huéspedes, asegurando una
+                administración eficiente de habitaciones y servicios del hostal.
+            </p>
+
+            <h3>Alcance del sistema</h3>
+            <ul>
+                <li>Permitir que los huéspedes realicen reservas en línea o de forma presencial.</li>
+                <li>Facilitar la validación automática de disponibilidad de habitaciones.</li>
+                <li>Registrar datos personales y mantener historial de huéspedes.</li>
+                <li>Controlar el estado y ocupación de las habitaciones en tiempo real.</li>
+            </ul>
+        </section>
+
+        <!-- FUNCIONALIDADES -->
+        <section id="funcionalidades">
+            <h2>1.2. Funcionalidades del Sistema</h2>
+
+            <h3>A. Funcionalidades Clave (Obligatorias)</h3>
+            <ul>
+                <li><strong>Gestión de Reservas:</strong> Registrar, modificar, validar o cancelar reservas.</li>
+                <li><strong>Validación y Confirmación:</strong> Verifica disponibilidad y genera confirmaciones.</li>
+                <li><strong>Gestión de Habitaciones:</strong> Control del estado (disponible, ocupada, mantenimiento).</li>
+                <li><strong>Pre Check-In y Check-In:</strong> Registro previo y validación a la llegada.</li>
+                <li><strong>Gestión de Usuarios y Roles:</strong> Accesos según tipo de usuario.</li>
+                <li><strong>Generación de Reportes:</strong> Emite reportes de ocupación e ingresos.</li>
+            </ul>
+
+            <h3>B. Funcionalidades Secundarias (Opcionales / Futuras)</h3>
+            <ul>
+                <li>Reservas en línea mediante portal web o aplicación móvil.</li>
+                <li>Notificaciones automáticas vía correo o WhatsApp.</li>
+                <li>Módulo de estadísticas y reportes avanzados.</li>
+            </ul>
+        </section>
+
+        <!-- ACTORES -->
+        <section id="actores">
+            <h2>1.3. Identificación de Usuarios Principales (Actores)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Actor / Usuario</th>
+                        <th>Rol dentro del Sistema</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Huésped (Cliente)</td>
+                        <td>Realiza reservas, pagos y pre check-in.</td>
+                    </tr>
+                    <tr>
+                        <td>Recepcionista</td>
+                        <td>Administra reservas, valida pagos y realiza check-in/check-out.</td>
+                    </tr>
+                    <tr>
+                        <td>Administrador / Gerente</td>
+                        <td>Supervisa operaciones, gestiona usuarios y reportes.</td>
+                    </tr>
+                    <tr>
+                        <td>Sistema de Reserva (Interno)</td>
+                        <td>Automatiza validaciones y notificaciones.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- REQUISITOS -->
+        <section id="requisitos">
+            <h1>II. Requisitos No Funcionales</h1>
+
+            <article>
+                <h3>Seguridad</h3>
+                <p>El sistema debe garantizar la protección de datos mediante autenticación, encriptación y respaldos automáticos.</p>
+                <p><strong>Justificación:</strong> Evita accesos no autorizados y pérdida de información.</p>
+            </article>
+
+            <article>
+                <h3>Rendimiento</h3>
+                <p>El sistema debe procesar operaciones comunes en menos de 2 segundos.</p>
+                <p><strong>Justificación:</strong> Mejora la eficiencia y experiencia del usuario.</p>
+            </article>
+
+            <article>
+                <h3>Usabilidad</h3>
+                <p>Debe contar con una interfaz intuitiva y fácil de usar.</p>
+                <p><strong>Justificación:</strong> Minimiza errores y facilita el aprendizaje.</p>
+            </article>
+
+            <article>
+                <h3>Compatibilidad</h3>
+                <p>Accesible desde distintos navegadores y dispositivos.</p>
+                <p><strong>Justificación:</strong> Favorece la flexibilidad y disponibilidad.</p>
+            </article>
+
+            <article>
+                <h3>Mantenibilidad</h3>
+                <p>Fácilmente actualizable y escalable.</p>
+                <p><strong>Justificación:</strong> Facilita futuras mejoras sin afectar el sistema.</p>
+            </article>
+        </section>
+
+        <!-- DIAGRAMAS -->
+        <section id="diagramas">
+            <h1>III. Diagramas del Sistema</h1>
+
+            <article class="diagramas">
+                <h2>Diagrama de Casos de Uso - Reserva</h2>
+                <img src="images/CasosDeUso-Reserva.png" alt="Diagrama de casos de uso Reserva">
+
+                <h2>Modelo Lógico de la Base de Datos (MySQL)</h2>
+                <img src="images/database.png" alt="Modelo lógico MySQL">
+
+                <h2>Diagrama de Casos de Uso - Cliente</h2>
+                <img src="images/CasoDeUso-Cliente.png" alt="Diagrama de casos de uso Cliente">
+
+                <h2>Diagrama de Clases Conceptuales</h2>
+                <img src="images/CasosConceptuales.png" alt="Diagrama de clases conceptuales">
+            </article>
+        </section>
+    </main>
+
+    <!-- BOTÓN FLOTANTE -->
+    <button id="btnTop" title="Volver arriba">⬆</button>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>© 2025 Hostal ApuQhawarina | Proyecto académico - Ingeniería de Sistemas e Informática</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
