@@ -17,7 +17,7 @@
             <section class="info">
                 <p><strong>Integrantes:</strong></p>
                 <ul>
-                    <li>Fernandez Pari Jose Sebastian</li>
+                    <li>Fernandez Pari Jose Sebastian (SM)</li>
                     <li>Apaza Quispe Emerson</li>
                     <li>Gibaja Serrano Mauricio</li>
                     <li>Alvarez Quispe Alexander</li>
@@ -97,7 +97,7 @@
                     </tr>
                     <tr>
                         <td>Recepcionista</td>
-                        <td>Administra reservas, valida pagos y realiza check-in/check-out.</td>
+                        <td>Administra reservas, realiza check-in/check-out.</td>
                     </tr>
                     <tr>
                         <td>Administrador / Gerente</td>
@@ -153,16 +153,144 @@
             <article class="diagramas">
                 <h2>Diagrama de Casos de Uso - Reserva</h2>
                 <img src="images/CasosDeUso-Reserva.png" alt="Diagrama de casos de uso Reserva">
-
+            
+                <h3>1. Descripción general del diagrama de reserva</h3>
+                <p>
+                    El diagrama de casos de uso representa las interacciones entre los actores y el sistema de reserva del hostal,
+                    mostrando las funcionalidades principales desde la perspectiva del usuario. El objetivo principal del sistema es
+                    permitir que los huéspedes realicen reservas de hospedaje de manera sencilla, gestionando los datos personales,
+                    las fechas, las habitaciones.
+                </p>
+            
+                <h3>2. Actores identificados</h3>
+                <ul>
+                    <li><strong>Huésped:</strong> Persona externa que desea realizar una reserva en el hostal. Interactúa directamente con el sistema para buscar, seleccionar y confirmar su hospedaje.</li>
+                    <li><strong>Sistema de Reserva:</strong> Representa la lógica interna o módulo automatizado que valida y gestiona la información de las reservas.</li>
+                    <li><strong>Recepcionista:</strong> Empleado del hostal encargado de recibir la notificación de nuevas reservas y realizar la gestión física del hospedaje.</li>
+                </ul>
+            
+                <h3>3. Casos de uso principales</h3>
+                <ul>
+                    <li><strong>Buscar hospedaje:</strong> El huésped accede al sistema para iniciar una búsqueda de habitaciones disponibles según sus necesidades.</li>
+                    <li><strong>Ver opciones de hospedaje:</strong> El sistema muestra diferentes tipos de habitaciones, precios y servicios.</li>
+                    <li><strong>Seleccionar hospedaje:</strong> El huésped elige una opción específica de alojamiento según sus preferencias.</li>
+                    <li><strong>Ingreso a la plataforma:</strong> El huésped accede al sistema de reservas (portal web o aplicación).</li>
+                    <li><strong>Ingreso de datos personales:</strong> El huésped registra su información (nombre, documento, contacto, etc.) para completar la reserva.</li>
+                    <li><strong>Seleccionar habitación:</strong> El huésped elige la habitación deseada dentro de las disponibles.</li>
+                    <li><strong>Seleccionar fechas:</strong> El huésped indica las fechas de entrada y salida para la reserva.</li>
+                    <li><strong>Realizar reserva:</strong> El huésped confirma los datos ingresados y solicita la reserva formalmente. Este caso de uso <em>incluye</em> la selección de habitación y de fechas.</li>
+                    <li><strong>Pagar reserva:</strong> El huésped realiza el pago correspondiente.</li>
+                    <li><strong>Confirmación de reserva:</strong> El sistema genera una confirmación de la reserva (número, fechas, habitación, monto, etc.) y la envía al huésped.</li>
+                    <li><strong>Validación de la reserva:</strong> El sistema valida la información del huésped, la disponibilidad y el pago antes de confirmar la reserva.</li>
+                    <li><strong>Notificación de la reserva:</strong> El sistema notifica automáticamente al recepcionista sobre la nueva reserva registrada.</li>
+                </ul>
+            
+                <h3>4. Relaciones entre casos de uso</h3>
+                <ul>
+                    <li><strong>Relación &lt;&lt;include&gt;&gt;:</strong>
+                        <ul>
+                            <li>“Realizar reserva” incluye “Seleccionar habitación” y “Seleccionar fechas”.</li>
+                            <li>“Confirmación de reserva” incluye “Validación de reserva”.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dependencias funcionales:</strong>
+                        <ul>
+                            <li>“Pagar reserva” ocurre después de “Realizar reserva”.</li>
+                            <li>“Confirmación de reserva” se ejecuta tras el pago exitoso.</li>
+                            <li>“Notificación de la reserva” se activa automáticamente tras la confirmación.</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <h3>5. Flujo general del proceso</h3>
+                <ol>
+                    <li>El huésped busca y visualiza las opciones de hospedaje.</li>
+                    <li>Selecciona una habitación y las fechas deseadas.</li>
+                    <li>Ingresa su información personal.</li>
+                    <li>Realiza la reserva, la cual es validada por el sistema.</li>
+                    <li>Efectúa el pago correspondiente.</li>
+                    <li>El sistema genera la confirmación de la reserva.</li>
+                    <li>El recepcionista recibe la notificación para registrar la llegada del cliente.</li>
+                </ol>
+            
+                <h3>6. Conclusión</h3>
+                <p>
+                    Este diagrama de casos de uso permite visualizar de forma clara la interacción entre los usuarios y el sistema.
+                    El huésped es el actor principal que ejecuta la mayoría de las funciones, mientras que el Sistema de Reserva y el
+                    Recepcionista tienen un papel de validación y gestión administrativa.  
+                    El diseño asegura un flujo lógico de reserva que abarca desde la búsqueda del hospedaje hasta la confirmación final,
+                    garantizando que la información fluya correctamente entre los diferentes actores.
+                </p>
+            
+                <hr>
+            
                 <h2>Modelo Lógico de la Base de Datos (MySQL)</h2>
                 <img src="images/database.png" alt="Modelo lógico MySQL">
 
                 <h2>Diagrama de Casos de Uso - Cliente</h2>
                 <img src="images/CasoDeUso-Cliente.png" alt="Diagrama de casos de uso Cliente">
-
+                
+                <h3>1. Descripción general del diagrama</h3>
+                <p>
+                    Este proceso tiene como finalidad facilitar el ingreso del cliente al hostal antes de su llegada, 
+                    permitiéndole registrar y enviar su información personal para agilizar la atención en recepción.  
+                    El sistema, junto con el recepcionista, se encarga de validar la reserva, guardar los datos y actualizar 
+                    el estado de las habitaciones y reservas en función de la llegada del huésped.
+                </p>
+                
+                <h3>2. Actor principal</h3>
+                <ul>
+                    <li><strong>Huésped (Cliente):</strong> Es la persona que ha realizado una reserva y que interactúa con el sistema 
+                        para completar su proceso de pre check-in y posterior check-in.</li>
+                </ul>
+                
+                <h3>3. Casos de uso relacionados con el cliente</h3>
+                <ul>
+                    <li><strong>Realizar Pre Check-in:</strong> El huésped ingresa al enlace proporcionado por el hostal para adelantar 
+                        el registro antes de su llegada. Aquí completa sus datos personales y los detalles de su reserva.</li>
+                    <li><strong>Enviar la información del Pre Check-in:</strong> Una vez completado el formulario, el huésped envía la 
+                        información al sistema de reservas, que se encargará de almacenarla y validarla.</li>
+                    <li><strong>Realizar el Check-in:</strong> Al llegar al hostal, el huésped confirma su presencia. Este proceso puede 
+                        implicar la firma digital o física del registro de ingreso.</li>
+                </ul>
+                
+                <h3>4. Relaciones (&lt;&lt;include&gt;&gt;)</h3>
+                <ul>
+                    <li><strong>“Realizar Pre Check-in” &lt;&lt;include&gt;&gt; “Enviar la información del Pre Check-in”</strong>  
+                        <br>➜ Significa que el envío de la información es una acción obligatoria dentro del proceso de pre check-in.</li>
+                    <li><strong>“Realizar el Check-in” &lt;&lt;include&gt;&gt; “Validar reserva”</strong> (a través del sistema o recepcionista)  
+                        <br>➜ Antes de que el huésped pueda completar su check-in, el sistema valida que su reserva esté vigente.</li>
+                </ul>
+                
+                <h3>5. Flujo del proceso desde la perspectiva del huésped</h3>
+                <ol>
+                    <li>El huésped recibe un enlace de pre check-in (enviado por el sistema o el recepcionista).</li>
+                    <li>Ingresa al enlace y realiza el pre check-in, completando su información.</li>
+                    <li>Envía sus datos personales (nombre, documento, contacto, etc.) al sistema.</li>
+                    <li>El sistema almacena y valida los datos con la reserva existente.</li>
+                    <li>Al llegar al hostal, el huésped realiza su check-in presencial, finalizando el proceso de ingreso.</li>
+                </ol>
+                
+                <h3>6. Conclusión</h3>
+                <p>
+                    Desde la perspectiva del cliente (huésped), el sistema ofrece una experiencia más rápida y eficiente, 
+                    permitiéndole registrarse anticipadamente y reducir tiempos al momento de su llegada.  
+                    El diagrama refleja cómo el huésped interactúa activamente con el sistema en los pasos de pre check-in y check-in, 
+                    mientras que las tareas de validación y actualización son gestionadas automáticamente por el sistema o con apoyo del recepcionista.
+                </p>
+                
                 <h2>Diagrama de Clases Conceptuales</h2>
                 <img src="images/CasosConceptuales.png" alt="Diagrama de clases conceptuales">
-            </article>
+
+        </section>
+
+
+        <section id="wallframes">
+            <h1>Diseño Login</h1>
+            <img src="images/login-test.png">
+
+            <h1>Diseño Vista General</h1>
+            <img src="images/vista-general.png">
         </section>
     </main>
 
@@ -173,7 +301,8 @@
     <footer>
         <p>© 2025 Hostal ApuQhawarina | Proyecto académico - Ingeniería de Sistemas e Informática</p>
     </footer>
-
     <script src="script.js"></script>
+
+
 </body>
 </html>

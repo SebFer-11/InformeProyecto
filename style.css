@@ -1,4 +1,4 @@
-/* ====== RESET GENERAL ====== */
+/* ===== RESET GENERAL ===== */
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +7,14 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ====== ENCABEZADO CON ANIMACIÓN ====== */
+/* ===== ENCABEZADO CON ANIMACIÓN ===== */
 .main-header {
     background: linear-gradient(270deg, #1d548b, #4a8aca, #6db3f2, #1d548b);
     background-size: 400% 400%;
     animation: gradientMove 15s ease infinite;
     color: white;
     text-align: center;
-    padding: 50px 20px;
-    position: relative;
+    padding: 60px 20px;
     border-bottom: 5px solid #0b2b4a;
 }
 
@@ -26,7 +25,7 @@
 }
 
 .main-header h1 {
-    font-size: 2.3em;
+    font-size: 2.4em;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -35,24 +34,27 @@
 .main-header h2 {
     font-size: 1.3em;
     font-weight: 400;
-    opacity: 0.9;
+    opacity: 0.95;
+    margin-bottom: 20px;
 }
 
 .main-header .info {
-    margin-top: 20px;
-    font-size: 0.95em;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 10px;
 }
 
 .main-header ul {
     list-style: none;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .main-header li {
     margin: 4px 0;
 }
 
-/* ====== NAVEGACIÓN ====== */
+/* ===== NAVEGACIÓN ===== */
 .navbar {
     position: sticky;
     top: 0;
@@ -60,9 +62,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10px 0;
+    padding: 12px 0;
     z-index: 10;
     border-bottom: 3px solid #0b2b4a;
+    transition: box-shadow 0.3s ease;
 }
 
 .navbar a {
@@ -71,17 +74,17 @@
     margin: 8px 15px;
     font-weight: bold;
     transition: all 0.3s ease;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border-radius: 6px;
 }
 
 .navbar a:hover {
     background-color: #4a8aca;
 }
 
-/* ====== CONTENIDO PRINCIPAL ====== */
+/* ===== CONTENIDO PRINCIPAL ===== */
 .container-main {
-    padding: 40px 10%;
+    padding: 50px 10%;
     background: #f8f9fa;
     color: #333;
     line-height: 1.6;
@@ -89,14 +92,14 @@
 
 .container-main h1 {
     color: #1d548b;
-    border-bottom: 2px solid #1d548b;
-    margin-bottom: 15px;
+    border-bottom: 3px solid #1d548b;
+    margin-bottom: 20px;
     padding-bottom: 5px;
 }
 
 .container-main h2 {
     color: #14436e;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 .container-main h3 {
@@ -105,16 +108,19 @@
 }
 
 ul {
-    margin-left: 20px;
+    margin-left: 25px;
     list-style-type: square;
 }
 
+/* ===== TABLAS ===== */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 25px 0;
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 th, td {
@@ -128,31 +134,48 @@ th {
     color: white;
 }
 
-/* ====== ARTÍCULOS ====== */
-article {
-    background: #ffffff;
-    padding: 15px 20px;
-    margin: 20px 0;
-    border-left: 4px solid #1d548b;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+tr:nth-child(even) {
+    background: #f2f6fa;
 }
 
-/* ====== IMÁGENES DE DIAGRAMAS ====== */
-.diagramas img {
+tr:hover {
+    background: #eaf2fb;
+}
+
+/* ===== ARTÍCULOS ===== */
+article {
+    background: #ffffff;
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-left: 4px solid #1d548b;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ===== IMÁGENES ===== */
+.diagramas img,
+#wallframes img {
     display: block;
-    margin: 20px auto;
+    margin: 25px auto;
     max-width: 90%;
     border: 2px solid #14436e;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.diagramas img:hover {
+.diagramas img:hover,
+#wallframes img:hover {
     transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* ====== BOTÓN FLOTANTE ====== */
+#wallframes h1 {
+    color: #1d548b;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ===== BOTÓN FLOTANTE ===== */
 #btnTop {
     display: none;
     position: fixed;
@@ -163,8 +186,8 @@ article {
     border: none;
     border-radius: 50%;
     font-size: 1.4em;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -173,27 +196,31 @@ article {
 
 #btnTop:hover {
     background-color: #4a8aca;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
-/* ====== PIE DE PÁGINA ====== */
+/* ===== PIE DE PÁGINA ===== */
 footer {
     background: #133c63;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     font-size: 0.9em;
     border-top: 4px solid #0b2b4a;
 }
 
-/* ====== RESPONSIVE ====== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .container-main {
-        padding: 20px 5%;
+        padding: 25px 5%;
     }
 
     .main-header h1 {
         font-size: 1.8em;
+    }
+
+    .main-header h2 {
+        font-size: 1.1em;
     }
 
     .navbar {
@@ -204,4 +231,33 @@ footer {
     table, th, td {
         font-size: 0.9em;
     }
+
+    #btnTop {
+        width: 40px;
+        height: 40px;
+    }
+}
+.navbar a.active {
+    background: #4a8aca;
+    color: #fff;
+}
+
+.diagramas p {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.diagramas ul,
+.diagramas ol {
+    margin-left: 35px;
+    margin-top: 8px;
+}
+
+.diagramas li {
+    margin-bottom: 6px;
+}
+
+.diagramas h2, 
+.diagramas h3 {
+    margin-top: 25px;
 }
